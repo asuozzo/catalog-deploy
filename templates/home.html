@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 col-sm-12">
+        <div class="col-sm-3 sidebar">
+            <h4>Genres</h4>
+            {% for g in genres %}
+                <div>
+                    <h5><a href="{{ url_for('showGenreBooks',book_genre=g) }}">{{ g }}</a></h5>
+                </div>
+
+            {% endfor %}
+        </div>
+        <div class="col-sm-9">
+            <h2>Books</h2>
+            {% for b in books %}
+                <h3><a href="{{ url_for('showBook', book_id=b.id) }}">{{ b.title }}</a> <span class="author">by {{ b.author }}</span></h3>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+.navbar-btn {
+    margin-right:8px !important;
+}
+
+.navbar-header {
+    margin-bottom: 10px;
+}
+
+.alert {
+    list-style-type: none;
+
+}
+
+.author {
+    font-size: .6em;
+    color: gray;
+    text-transform: uppercase;
+    font-weight:bold;
+    display: block;
+}
+
+.sidebar {
+    border:1px solid grey;
+}
+
+.userinfo {
+    color:gray;
+    padding-top: 20px;
+}
+
+.info {
+    font-size: .9em;
+    text-transform: uppercase;
+    color: grey;
+}
+
+.description {
+    padding:20px;
+    border: 1px solid #d3d3d3;
+}
+
+.title {
+    border-bottom: 2px solid #d3d3d3;
+}
+
+.navbar-header {
+    margin-top:10px;
+}
+
+.sub {
+    margin-top: 15px;
+}
