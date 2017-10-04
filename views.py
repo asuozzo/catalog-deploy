@@ -11,7 +11,7 @@ from sqlalchemy import create_engine
 from flask import make_response
 import os
 
-engine = create_engine('postgresql://postgres:catalog@52.15.184.187/catalog')
+engine = create_engine('postgresql://catalog:udacity@localhost/catalog')
 
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
@@ -50,8 +50,8 @@ def fbconnect():
     access_token = request.data
 
     # Exchange client token for server-side token
-    app_id = json.loads(open('/vagrant/server/fb_client_secrets.json', "r").read())["web"]["app_id"]
-    app_secret = json.loads(open('/vagrant/server/fb_client_secrets.json', "r").read())["web"]["app_secret"]
+    app_id = json.loads(open('/var/www/html/fb_client_secrets.json', "r").read())["web"]["app_id"]
+    app_secret = json.loads(open('/var/www/html/fb_client_secrets.json', "r").read())["web"]["app_secret"]
     url = ("https://graph.facebook.com/oauth/access_token?grant_type=fb_exchange_token&client_id=%s&client_secret=%s&fb_exchange_token=%s") % (app_id,app_secret,access_token)
     h = httplib2.Http()
     result = h.request(url, "GET")[1]

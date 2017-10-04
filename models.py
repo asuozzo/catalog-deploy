@@ -33,6 +33,6 @@ class Book(Base):
         }
 
 
-engine = create_engine('postgresql://postgres:udacity@localhost/catalog')
+engine = create_engine('postgresql://catalog:udacity@localhost/catalog')
 
 Base.metadata.create_all(engine)
